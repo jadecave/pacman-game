@@ -1,24 +1,107 @@
 /* ------ JADE'S CODE --------------------------- */
 /* Update styling to make even nice, despite liking classic look */
-html, body {
-    margin: 0rem;
-    padding: 0rem;
-    box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
-    font-family: 'Press Start 2P', cursive;
-}
-
-h1, h4, h5 {
-    text-align: center;
-    font-weight: lighter;
-}
-
-#playAgainBtn {
+html,
+body {
     margin: auto;
     padding: auto;
-    display: flex;
-    background-color: orange;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+    font-family: "Press Start 2P", cursive;
+    font-size: 62.5%;
 }
+
+h1,
+h5 {
+    text-align: center;
+    font-weight: lighter;
+    font-size: 2.5rem;
+}
+
+#yourScore {
+    margin: auto;
+    padding: auto;
+    text-align: center;
+    font-weight: lighter;
+    font-size: 1.8rem;
+}
+
+#pageTitle {
+    /* padding: 20px; */
+}
+
+/* Put pacman img to right of title */
+#pacmanImg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    height: auto;
+}
+
+#playAgainBtn, #playAgainBtnWin, #playAgainBtnOver {
+    margin: auto;
+    padding: 0.4rem;
+    display: flex;
+    z-index: 30;
+    background-color: rgb(21, 255, 0);
+    font-size: 1.6rem;
+    font-family: "Open Sans", sans-serif;
+    font-family: "Press Start 2P", cursive;
+}
+
+
+#youWin {
+    margin: auto;
+    padding: 200px 0 0 0;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    color: white;
+    text-align: center;
+    font-size: 3rem;
+    display: none;
+}
+
+
+#gameOver {
+    margin: auto;
+    padding: 200px 0 0 0;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(255, 0, 64);
+    color: indigo;
+    text-align: center;
+    font-size: 3rem;
+    display: none;
+
+}
+
+/* WANT TO CENTER TEXT */
+/* 
+#youWinText {
+    color: white;
+    text-align: center;
+    z-index: 20;
+    display: none; 
+
+
+}
+
+#gameOverText {
+    color: indigo;
+    text-align: center;
+    z-index: 20;
+   display: none; 
+
+} */
 
 /* -------------------------------------------- */
 /* JADE'S CODE EDITS MADE:
@@ -84,11 +167,10 @@ changed color scheme, new animation, @mediaqueries */
 @keyframes blinker {
     50% {
         opacity: 0.35;
-       
     }
+
     75% {
         opacity: 0.7;
-       
     }
 }
 

@@ -16,18 +16,32 @@
 </head>
 
 <body>
-  <h1>Pac-Man</h1>
-  <p>
-  <h4>Your Score:<span id="yourScore"></span></h4>
-  <h5>High Score:<span id="highScore"></span></h5>
-  </p>
-  <!-- reload page upon click and play again -->
-  <!-- .reload() is inbuilt method to reload page -->
-  <button id="playAgainBtn" onclick="window.location.reload()">Play Again!</button>
+  <div class="container">
+    <div id="pageTitle">
+      <h1>Pac-Man</h1>
+    </div>
+    <img src="./images/toppng.com-ac-man-art-maker-pacman-pixel-621x231 (1).png"
+      alt="Pac-Man eating power pellets" id="pacmanImg">
+    <br>
+    <div id="yourScore">Your Score:</div><br>
+    <!-- Waiting on API to implement this feature -->
+    <!-- <h5>High Score:<span id="highScore"></span></h5> -->
 
-  <br><br>
-  <div class="grid"></div>
-  <br><br><br>
+    <!-- reload page upon click and play again -->
+    <!-- .reload() is inbuilt method to reload page -->
+    <!-- <button id="playAgainBtn" onclick="window.location.reload()">Play Again!</button> -->
+
+    <div id="youWin"> <span id="youWinText">YOU WIN!</span>
+      <button id="playAgainBtnWin" onclick="window.location.reload()">Play Again!</button>
+    </div>
+    <div id="gameOver"><span id="gameOverText">GAME OVER!</span><br><br>
+      <button id="playAgainBtnOver" onclick="window.location.reload()">Play
+        Again!</button>
+    </div>
+    <br><br>
+    <div class="grid"></div>
+    <br><br><br>
+  </div>
 </body>
 
 </html>

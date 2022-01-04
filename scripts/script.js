@@ -7,6 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const width = 28;
   let score = 0;
 
+  const youWinDiv = document.querySelector("#youWin");
+  const gameOverDiv = document.querySelector("#gameOver");
+
   const grid = document.querySelector(".grid");
   const layout = [
     1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
@@ -233,27 +236,27 @@ document.addEventListener("DOMContentLoaded", () => {
       squares[pacmanCurrentIndex].classList.contains("ghost") &&
       !squares[pacmanCurrentIndex].classList.contains("scared-ghost")
     ) {
+      flashScreenGameOver();
       ghosts.forEach((ghost) => clearInterval(ghost.timerId));
       document.removeEventListener("keyup", movePacman);
 
       setTimeout(function () {
         alert("GAME OVER, try again!");
       }, 500);
-    } 
+    }
   }
-  flashScreenGameOver()
 
   //check for a win - more is when this score is reached
   function checkForWin() {
     if (score === 274) {
+      flashScreenYouWin();
       ghosts.forEach((ghost) => clearInterval(ghost.timerId));
       document.removeEventListener("keyup", movePacman);
       setTimeout(function () {
-        alert("You Win, play again!");
+        alert("YOU WIN, play again!");
       }, 500);
     }
   }
-  flashScreenWin()
 
   // ------ JADE'S FUNCTIONS ---------------------------
   // reload page upon click and play again
@@ -262,17 +265,19 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   const reloadBtn = document.querySelector("#playAgainBtn");
   reloadBtn.addEventListener("click", reloadPlayAgain, false);
+  const reloadBtnWin = document.querySelector("#playAgainBtnWin");
+  reloadBtnWin.addEventListener("click", reloadPlayAgain, false);
+  const reloadBtnOver = document.querySelector("#playAgainBtnOver");
+  reloadBtnOver.addEventListener("click", reloadPlayAgain, false);
 
-
-  // Try using Canvas ----------------------
   // screen flashes "Game Over"
   function flashScreenGameOver() {
-    flashScreenGameOver = location.flashScreenGameOver;
+    gameOverDiv.style.display = "block";
   }
 
   // screen flashes "You Win!"
-  function flashScreenWin() {
-    flashScreenWin = location.flashScreenWin;
+  function flashScreenYouWin() {
+    youWinDiv.style.display = "block";
   }
 });
 
