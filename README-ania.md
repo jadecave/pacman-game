@@ -1,19 +1,13 @@
 # pac-man
-Vanilla javaScript Game with HTML and CSS built in VS Code.
+Vanilla javaScript Game with HTML and CSS
 
-This project originally came from Ania Kubow @kubowania and has been adapted by Jade Johnson @jadecave for her first Javascript project at DCI (Digital Career Institute) in Berlin. You will see Jade's notes in the files showing what has been added and edited. Original work is credited to original creator.
+A super simple walkthourgh to coding Pac-Man in vanilla JavaScript, HTML and CSS. View [here](https://www.youtube.com/channel/UC5DNytAJ6_FISueUfzZCVsw) 
 
-# Game Versions
-V1: https://github.com/kubowania/pac-man
-V2: https://github.com/jadecave/pacman-game
-
-I highly recommened subscribing to her YouTube channel because her concrete videos help me tremendously to understand what JavaScript is all about. And to watch her super simple walkthourgh to coding Pac-Man in vanilla JavaScript, HTML and CSS. View [here](https://www.youtube.com/channel/UC5DNytAJ6_FISueUfzZCVsw) 
-
-Please tag the original creator, @kubowania as I would LOVE to see your game!!!
+I have kept the styling at a bare miniumum for you to go wild and make it your own. Please tag me as I would LOVE to see your game!!!
 
 In this game I show you how to make Pac-Man move around the grid while avoiding walls, show you how to use the constructor method for all four ghosts to apply their unque characterisitcs to each one, including at what speed they move at. Clyde obviously being the slowest.
 
-### Inbuilt JavaScript functions Ania has used: 
+### Inbuilt JavaScript functions I have used: 
 * addEventListener()
 * getElementById()
 * querySelector()
@@ -32,9 +26,14 @@ In this game I show you how to make Pac-Man move around the grid while avoiding 
 * setInterval()
 * removeEventListener
 
+### Next steps:
+My next goal is to make a copy of this game and apply logic to the ghost moves. At the moment they are choosing a direction to go in at random. I want to apply logic that makes them move closer to wherever Pac-man is.
+
+Watch this space.
+
+
 
 ### MIT Licence
-Copyright (c) 2022 Jade Johnson
 
 Copyright (c) 2020 Ania Kubow
 
