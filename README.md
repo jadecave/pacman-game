@@ -5,6 +5,7 @@ This project originally came from Ania Kubow @kubowania and has been adapted by 
 
 # Game Versions
 V1: https://github.com/kubowania/pac-man
+
 V2: https://github.com/jadecave/pacman-game
 
 I highly recommened subscribing to her YouTube channel because her concrete videos help me tremendously to understand what JavaScript is all about. And to watch her super simple walkthourgh to coding Pac-Man in vanilla JavaScript, HTML and CSS. View [here](https://www.youtube.com/channel/UC5DNytAJ6_FISueUfzZCVsw) 
