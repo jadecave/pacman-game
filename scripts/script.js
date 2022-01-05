@@ -264,7 +264,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // ------------------------------------------------- //
 
       setTimeout(function () {
-        // alert("GAME OVER, try again!");
+        alert(`GAME OVER ${userName}, try again!`);
       }, 500);
     }
   }
@@ -295,7 +295,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // ------------------------------------------------- //
 
       setTimeout(function () {
-        // alert("YOU WIN, play again!");
+        alert(`YOU WIN ${userName}, play again!`);
       }, 500);
     }
   }
