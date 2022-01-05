@@ -2,13 +2,13 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   const yourScoreDisplay = document.getElementById("yourScore");
-  // can't get the highScoreDisplay to work with localStorage API
-  // const highScoreDisplay = document.getElementById("highScore");
   const width = 28;
   let score = 0;
-
+  // querySelector need css selector id/class
+  // don't need for getElementByID
   const youWinDiv = document.querySelector("#youWin");
   const gameOverDiv = document.querySelector("#gameOver");
+  const enterName = document.querySelector("#enterName");
 
   const grid = document.querySelector(".grid");
   const layout = [
@@ -242,15 +242,22 @@ document.addEventListener("DOMContentLoaded", () => {
       document.removeEventListener("keyup", movePacman);
       // save yourHighScore into local storage(only browser) (cookies with server), use Object (get, save and delete element)
       // "Enter your username"
+      let userName = enterName.value;
+      const newScore = { userName, score };
       if (localStorage.getItem("scores")) {
         let allScores = localStorage.getItem("scores");
         // changes string line 250 back to array
         allScores = JSON.parse(allScores);
+
         // don't want to save in array, change to string or get 0,,,3, etc
-        localStorage.setItem("scores", JSON.stringify([...allScores, score]));
+        localStorage.setItem(
+          "scores",
+          JSON.stringify([...allScores, newScore])
+        );
       } else {
-        localStorage.setItem("scores", JSON.stringify([score]));
+        localStorage.setItem("scores", JSON.stringify([newScore]));
       }
+      displayScores("#gameOverTableBody");
       setTimeout(function () {
         // alert("GAME OVER, try again!");
       }, 500);
@@ -263,15 +270,22 @@ document.addEventListener("DOMContentLoaded", () => {
       flashScreenYouWin();
       ghosts.forEach((ghost) => clearInterval(ghost.timerId));
       document.removeEventListener("keyup", movePacman);
+      let userName = enterName.value;
+      const newScore = { userName, score };
       if (localStorage.getItem("scores")) {
         let allScores = localStorage.getItem("scores");
         // changes string line 250 back to array
         allScores = JSON.parse(allScores);
+
         // don't want to save in array, change to string or get 0,,,3, etc
-        localStorage.setItem("scores", JSON.stringify([...allScores, score]));
+        localStorage.setItem(
+          "scores",
+          JSON.stringify([...allScores, newScore])
+        );
       } else {
-        localStorage.setItem("scores", JSON.stringify([score]));
+        localStorage.setItem("scores", JSON.stringify([newScore]));
       }
+      displayScores("#winTableBody");
       setTimeout(function () {
         // alert("YOU WIN, play again!");
       }, 500);
@@ -298,6 +312,21 @@ document.addEventListener("DOMContentLoaded", () => {
   // screen flashes "You Win!"
   function flashScreenYouWin() {
     youWinDiv.style.display = "block";
+  }
+
+  function displayScores(tableBodyId) {
+    let savedScores = localStorage.getItem("scores");
+    savedScores = JSON.parse(savedScores);
+    const tableBody = document.querySelector(tableBodyId);
+    // empties the table
+    tableBody.innerHTML = "";
+    // forEach calls anonymous function for each element
+    savedScores.forEach(function (element) {
+      tableBody.innerHTML += `<tr>
+      <td>${element.userName}</td>
+      <td>${element.score}</td>
+      </tr>`;
+    });
   }
 });
 

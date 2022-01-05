@@ -26,8 +26,7 @@
       alt="Pac-Man eating power pellets" id="pacmanImg">
     <br><br>
     <div id="yourScore">Your Score:</div>
-    <!-- Waiting on API to implement this feature -->
-    <!-- <h5>High Score:<span id="highScore"></span></h5> -->
+    <input id="enterName" type="text">
 
     <!-- reload page upon click and play again -->
     <!-- .reload() is inbuilt method to reload page -->
@@ -37,22 +36,27 @@
       <button id="playAgainBtnWin" onclick="window.location.reload()">Play Again!</button>
       <br>
       <table id="winTable">
-        <tr>
-          <th>Winner</th>
-          <th>High Score</th>
-        </tr>
-        <tr>
-          <td>name</td>
-          <td>score</td>
-        </tr>
-        <tr>
-          <td>name</td>
-          <td>score</td>
-        </tr>
-        <tr>
-          <td>name</td>
-          <td>score</td>
-        </tr>
+        <thead>
+          <tr>
+            <th>Winner</th>
+            <th>High Score</th>
+          </tr>
+        </thead>
+        <!-- Table body changes with new scores -->
+        <tbody id="winTableBody">
+          <tr>
+            <td>name</td>
+            <td>score</td>
+          </tr>
+          <tr>
+            <td>name</td>
+            <td>score</td>
+          </tr>
+          <tr>
+            <td>name</td>
+            <td>score</td>
+          </tr>
+        </tbody>
       </table>
       <!-- insert same scores table as gameover -->
     </div>
@@ -63,22 +67,26 @@
         Again!</button>
       <br>
       <table id="gameOverTable">
-        <tr>
-          <th>Winner</th>
-          <th>High Score</th>
-        </tr>
-        <tr>
-          <td>name</td>
-          <td>score</td>
-        </tr>
-        <tr>
-          <td>name</td>
-          <td>score</td>
-        </tr>
-        <tr>
-          <td>name</td>
-          <td>score</td>
-        </tr>
+        <thead>
+          <tr>
+            <th>Winner</th>
+            <th>High Score</th>
+          </tr>
+        </thead>
+        <tbody id="gameOverTableBody">
+          <tr>
+            <td>name</td>
+            <td>score</td>
+          </tr>
+          <tr>
+            <td>name</td>
+            <td>score</td>
+          </tr>
+          <tr>
+            <td>name</td>
+            <td>score</td>
+          </tr>
+        </tbody>
       </table>
     </div>
     <br><br>
