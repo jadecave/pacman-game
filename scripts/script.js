@@ -139,7 +139,8 @@ document.addEventListener("DOMContentLoaded", () => {
   function pacDotEaten() {
     if (squares[pacmanCurrentIndex].classList.contains("pac-dot")) {
       score++;
-      yourScoreDisplay.innerHTML = score;
+      // innerHTML overrides what I have in the div id yourScore, so need this shown below
+      yourScoreDisplay.innerHTML = `Your Score: ${score}`;
       squares[pacmanCurrentIndex].classList.remove("pac-dot");
     }
   }
@@ -239,9 +240,19 @@ document.addEventListener("DOMContentLoaded", () => {
       flashScreenGameOver();
       ghosts.forEach((ghost) => clearInterval(ghost.timerId));
       document.removeEventListener("keyup", movePacman);
-
+      // save yourHighScore into local storage(only browser) (cookies with server), use Object (get, save and delete element)
+      // "Enter your username"
+      if (localStorage.getItem("scores")) {
+        let allScores = localStorage.getItem("scores");
+        // changes string line 250 back to array
+        allScores = JSON.parse(allScores);
+        // don't want to save in array, change to string or get 0,,,3, etc
+        localStorage.setItem("scores", JSON.stringify([...allScores, score]));
+      } else {
+        localStorage.setItem("scores", JSON.stringify([score]));
+      }
       setTimeout(function () {
-        alert("GAME OVER, try again!");
+        // alert("GAME OVER, try again!");
       }, 500);
     }
   }
@@ -252,8 +263,17 @@ document.addEventListener("DOMContentLoaded", () => {
       flashScreenYouWin();
       ghosts.forEach((ghost) => clearInterval(ghost.timerId));
       document.removeEventListener("keyup", movePacman);
+      if (localStorage.getItem("scores")) {
+        let allScores = localStorage.getItem("scores");
+        // changes string line 250 back to array
+        allScores = JSON.parse(allScores);
+        // don't want to save in array, change to string or get 0,,,3, etc
+        localStorage.setItem("scores", JSON.stringify([...allScores, score]));
+      } else {
+        localStorage.setItem("scores", JSON.stringify([score]));
+      }
       setTimeout(function () {
-        alert("YOU WIN, play again!");
+        // alert("YOU WIN, play again!");
       }, 500);
     }
   }
