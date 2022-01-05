@@ -1,10 +1,15 @@
 /* ------ JADE'S CODE --------------------------- */
 /* Updated styling despite loving classic look */
 
-/* Add JSDoc ? */
+/* NEXT STEPS:
+    - Make splash pages scrollable to see all scores 
+    - Reset scores option (not just in inspect tool)
+    - @mediaqueries/responsive (new size in new classes)
+    - Add JSDoc
+*/
 
-/* (*)Low specificity. Applies to elements without classes or ids, so usually does not interfere with game for instance */
 
+/* (*)Low specificity. Applies to elements without classes or ids, so usually does not interfere with game, for instance */
 * {
     margin: 0;
     padding: 0;
@@ -105,7 +110,6 @@ h5 {
     }
 }
 
-/* NEXT STEPS: Make these splash pages scrollable to see all scores */
 #youWin {
     margin: auto;
     padding: 75px 0 0 0;
@@ -184,25 +188,11 @@ td {
 }
 
 
-/* 
-#youWinText {
-    color: white;
-    text-align: center;
-    z-index: 20;
-    display: none; 
-}
-
-#gameOverText {
-    color: indigo;
-    text-align: center;
-    z-index: 20;
-   display: none; 
-} */
 
 /* -------------------------------------------- */
-/* ANIA'S CODE WITH JADE'S CODE EDITS MADE:
+/* Ania's code with Jade's code edits:
 changed color scheme, new animation 
-Next steps: @mediaqueries/responsive (new size in new classes) */
+*/
 .grid {
     display: flex;
     flex-wrap: wrap;
@@ -262,7 +252,7 @@ Next steps: @mediaqueries/responsive (new size in new classes) */
 }
 
 /* ------ JADE'S CODE --------------------------- */
-/* Scared ghosts blink */
+/* Scared ghosts blink now */
 @keyframes blinker {
     50% {
         opacity: 0.35;
@@ -272,8 +262,3 @@ Next steps: @mediaqueries/responsive (new size in new classes) */
         opacity: 0.7;
     }
 }
-
-/* NEXT STEPS: Add mediaqueries/Responsiveness here ----------------------------------- */
-/* @media screen {
-    
-} */
