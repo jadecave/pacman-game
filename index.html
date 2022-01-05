@@ -24,14 +24,13 @@
     <br>
     <img src="./images/toppng.com-ac-man-art-maker-pacman-pixel-621x231 (1).png"
       alt="Pac-Man eating power pellets" id="pacmanImg">
-    <br><br>
-    <div id="yourScore">Your Score:</div>
-    <input id="enterName" type="text">
+    <br>
+    <div id="yourScore">Your Score:
+    </div><br>
+    <input id="enterName" type="text" placeholder="Type name 2 play">
 
     <!-- reload page upon click and play again -->
-    <!-- .reload() is inbuilt method to reload page -->
-    <!-- <button id="playAgainBtn" onclick="window.location.reload()">Play Again!</button> -->
-
+    <!-- .reload() = inbuilt method -->
     <div id="youWin"> <span id="youWinText">YOU WIN!</span><br><br>
       <button id="playAgainBtnWin" onclick="window.location.reload()">Play Again!</button>
       <br>
@@ -42,26 +41,23 @@
             <th>High Score</th>
           </tr>
         </thead>
-        <!-- Table body changes with new scores -->
+        <!-- Table body changes with new scores per JS takeover -->
         <tbody id="winTableBody">
           <tr>
-            <td>name</td>
-            <td>score</td>
+            <td>starduster</td>
+            <td>777</td>
           </tr>
           <tr>
-            <td>name</td>
-            <td>score</td>
+            <td>bowie</td>
+            <td>867</td>
           </tr>
           <tr>
-            <td>name</td>
-            <td>score</td>
+            <td>the dude</td>
+            <td>999</td>
           </tr>
         </tbody>
       </table>
-      <!-- insert same scores table as gameover -->
     </div>
-
-    <!-- how to add more rows? -->
     <div id="gameOver"><span id="gameOverText">GAME OVER!</span><br><br>
       <button id="playAgainBtnOver" onclick="window.location.reload()">Play
         Again!</button>
@@ -79,12 +75,16 @@
             <td>score</td>
           </tr>
           <tr>
-            <td>name</td>
-            <td>score</td>
+            <td>starduster</td>
+            <td>777</td>
           </tr>
           <tr>
-            <td>name</td>
-            <td>score</td>
+            <td>bowie</td>
+            <td>867</td>
+          </tr>
+          <tr>
+            <td>the dude</td>
+            <td>999</td>
           </tr>
         </tbody>
       </table>

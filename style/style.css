@@ -1,8 +1,9 @@
 /* ------ JADE'S CODE --------------------------- */
-/* Update styling to make even nice, despite liking classic look */
+/* Updated styling despite loving classic look */
 
-/* *Low specificity. Applies to elements without classes or ids, so usually does not interfere with game for instance */
+/* Add JSDoc ? */
 
+/* (*)Low specificity. Applies to elements without classes or ids, so usually does not interfere with game for instance */
 
 * {
     margin: 0;
@@ -21,7 +22,6 @@ body {
     font-family: "Open Sans", sans-serif;
     font-family: "Press Start 2P", cursive;
     background-color: black;
-
 }
 
 h1,
@@ -33,19 +33,27 @@ h5 {
 }
 
 #yourScore {
-    margin: auto;
-    padding: auto;
     text-align: center;
     font-weight: lighter;
     font-size: 1.8rem;
     color: magenta;
 }
 
-#pageTitle {
-    /* padding: 20px; */
+#enterName {
+    display: block;
+    margin: .5rem auto 0 auto;
+    padding: 2px 6px 2px 6px;
+    width: fit-content;
+    height: auto;
+    background-color: greenyellow;
+    border: purple 2px solid;
+    color: black;
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
-/* Put pacman img to right of title */
 #pacmanImg {
     display: block;
     margin-left: auto;
@@ -69,7 +77,7 @@ h5 {
     }
 }
 
-#playAgainBtn, #playAgainBtnWin, #playAgainBtnOver {
+#playAgainBtnWin, #playAgainBtnOver {
     margin: auto;
     padding: 0.7rem;
     text-align: center;
@@ -97,9 +105,10 @@ h5 {
     }
 }
 
+/* NEXT STEPS: Make these splash pages scrollable to see all scores */
 #youWin {
     margin: auto;
-    padding: 125px 0 0 0;
+    padding: 75px 0 0 0;
     position: fixed;
     z-index: 10;
     top: 0;
@@ -115,7 +124,7 @@ h5 {
 
 #gameOver {
     margin: auto;
-    padding: 125px 0 0 0;
+    padding: 75px 0 0 0;
     position: fixed;
     z-index: 10;
     top: 0;
@@ -132,9 +141,10 @@ h5 {
 #winTable {
     margin-left: auto;
     margin-right: auto;
+    padding: 10px 7px 10px 7px;
     width: 350px;
     height: fit-content;
-    padding: 10px 7px 10px 7px;
+    z-index: 15;
     text-align: center;
     background-color: white;
     border: black solid 2px;
@@ -148,9 +158,10 @@ h5 {
 #gameOverTable {
     margin-left: auto;
     margin-right: auto;
+    padding: 10px 7px 10px 7px;
     width: 350px;
     height: fit-content;
-    padding: 10px 7px 10px 7px;
+    z-index: 15;
     text-align: center;
     background-color: black;
     box-shadow: 2px 3px 10px blueviolet;
@@ -159,6 +170,7 @@ h5 {
     font-family: "Open Sans", sans-serif;
     font-size: 1.6rem;
     border-collapse: inherit;
+    overflow: scroll;
 }
 
 th {

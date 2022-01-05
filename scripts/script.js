@@ -4,11 +4,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const yourScoreDisplay = document.getElementById("yourScore");
   const width = 28;
   let score = 0;
+
+  // ---- Jade's code ---------------------------------- //
   // querySelector need css selector id/class
-  // don't need for getElementByID
+  // getElementById does not need
   const youWinDiv = document.querySelector("#youWin");
   const gameOverDiv = document.querySelector("#gameOver");
   const enterName = document.querySelector("#enterName");
+  // ------------------------------------------------- //
 
   const grid = document.querySelector(".grid");
   const layout = [
@@ -240,15 +243,15 @@ document.addEventListener("DOMContentLoaded", () => {
       flashScreenGameOver();
       ghosts.forEach((ghost) => clearInterval(ghost.timerId));
       document.removeEventListener("keyup", movePacman);
-      // save yourHighScore into local storage(only browser) (cookies with server), use Object (get, save and delete element)
-      // "Enter your username"
+
+      // ---- Jade's code ---------------------------------- //
+      // save high score into local storage(only browser) (cookies with server), use Object (get, save and delete element)
       let userName = enterName.value;
       const newScore = { userName, score };
       if (localStorage.getItem("scores")) {
         let allScores = localStorage.getItem("scores");
         // changes string line 250 back to array
         allScores = JSON.parse(allScores);
-
         // don't want to save in array, change to string or get 0,,,3, etc
         localStorage.setItem(
           "scores",
@@ -258,6 +261,8 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("scores", JSON.stringify([newScore]));
       }
       displayScores("#gameOverTableBody");
+      // ------------------------------------------------- //
+
       setTimeout(function () {
         // alert("GAME OVER, try again!");
       }, 500);
@@ -270,14 +275,15 @@ document.addEventListener("DOMContentLoaded", () => {
       flashScreenYouWin();
       ghosts.forEach((ghost) => clearInterval(ghost.timerId));
       document.removeEventListener("keyup", movePacman);
+
+      // ---- Jade's code ---------------------------------- //
       let userName = enterName.value;
       const newScore = { userName, score };
       if (localStorage.getItem("scores")) {
         let allScores = localStorage.getItem("scores");
         // changes string line 250 back to array
         allScores = JSON.parse(allScores);
-
-        // don't want to save in array, change to string or get 0,,,3, etc
+        // change to string or array becomes 0,,,3, etc
         localStorage.setItem(
           "scores",
           JSON.stringify([...allScores, newScore])
@@ -286,13 +292,15 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("scores", JSON.stringify([newScore]));
       }
       displayScores("#winTableBody");
+      // ------------------------------------------------- //
+
       setTimeout(function () {
         // alert("YOU WIN, play again!");
       }, 500);
     }
   }
 
-  // ------ JADE'S FUNCTIONS ---------------------------
+  // ---- Jade's code ---------------------------------- //
   // reload page upon click and play again
   function reloadPlayAgain() {
     reloadPlayAgain = location.reloadPlayAgain();
@@ -329,5 +337,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-
-// Dark Mode? ---------------------
