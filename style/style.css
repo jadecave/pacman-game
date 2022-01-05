@@ -37,33 +37,55 @@ h5 {
     color: magenta;
 }
 
+h4 {
+    padding: auto;
+    text-align: center;
+    font-weight: lighter;
+    font-size: 1.2rem;
+    word-spacing: 20%;
+    color: magenta;
+    flex-basis: 10%;
+}
+
+#pageTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 10px;
+}
+
 #yourScore {
     text-align: center;
     font-weight: lighter;
-    font-size: 1.8rem;
-    color: magenta;
+    font-size: 1.6rem;
+    color: rgb(21, 255, 0);
+    border: purple 1px solid;
+    width: fit-content;
+    height: auto;
+    margin: auto;
+    padding: 12px 0 12px 12px;
 }
 
 #enterName {
     display: block;
     margin: .5rem auto 0 auto;
-    padding: 2px 6px 2px 6px;
-    width: fit-content;
-    height: auto;
-    background-color: greenyellow;
-    border: purple 2px solid;
+    padding: 5px 6px 5px 6px;
+    width: 250px;
+    height: fit-content;
+    background-color: blanchedalmond;
+    border: rgb(21, 255, 0) 1px solid;
     color: black;
     font-family: "Open Sans", sans-serif;
-    font-size: 18px;
+    font-family: "Press Start 2P", cursive;
+    font-size: 16px;
     font-weight: 600;
     letter-spacing: 1px;
 }
 
 #pacmanImg {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100px;
+    flex-basis: 10%;
+    width: 80px;
     height: auto;
     animation: blinkerPacman 1.5s linear infinite;
 }
@@ -188,7 +210,6 @@ td {
 }
 
 
-
 /* -------------------------------------------- */
 /* Ania's code with Jade's code edits:
 changed color scheme, new animation 
@@ -210,7 +231,7 @@ changed color scheme, new animation
 }
 
 .pac-dot {
-    background-color: rgb(50, 240, 208);
+    background-color: rgb(176, 236, 179);
     border: 4px solid black;
     box-sizing: border-box;
 
